@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #D81B21;
+  --color-brand-red-dark: #9A1317;
+  --color-silver: #E0E0E0;
+  --color-metallic: #C0C0C0;
+  --color-carbon: #050505;
+  --color-slate: #1A1A1A;
+  
+  --font-display: 'Outfit', 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+  body {
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
