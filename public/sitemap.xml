@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.shyamlubricants.com/</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/products</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/products</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/product</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/product</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/about</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/contact</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/faq</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/privacy</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.shyamlubricants.com/terms</loc>
+    <loc>https://shyam-lubricants-website.vercel.app/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

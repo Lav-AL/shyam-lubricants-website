@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   description: "Maximum Protection. Export Quality. Official website of COSMOGOLD by SHYAM LUBRICANTS.",
   name: "SHYAM LUBRICANTS",
   brand: "COSMOGOLD",
-  url: import.meta.env.VITE_SITE_URL || "https://www.shyamlubricants.com",
+  url: import.meta.env.VITE_SITE_URL || "https://shyam-lubricants-website.vercel.app",
   contact: {
     phonePrimary: "+91 7975814984",
     phoneSecondary: "+91 7892400589",

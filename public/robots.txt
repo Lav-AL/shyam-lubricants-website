@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shyamlubricants.com/sitemap.xml
+Sitemap: https://shyam-lubricants-website.vercel.app/sitemap.xml

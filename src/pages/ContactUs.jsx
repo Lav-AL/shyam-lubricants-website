@@ -42,9 +42,9 @@ export function ContactUs() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "SHYAM LUBRICANTS",
-            "image": "https://example.com/logo.png", // Placeholder
-            "@id": "https://example.com",
-            "url": "https://example.com",
+            "image": `${SITE_CONFIG.url}/favicon.svg`,
+            "@id": SITE_CONFIG.url,
+            "url": SITE_CONFIG.url,
             "telephone": "+91-7975814984",
             "email": "mrsudamabaitha@gmail.com",
             "address": {
