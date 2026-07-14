@@ -15,7 +15,7 @@ export function ServerError() {
       <Helmet>
         <title>500 - System Error | {SITE_CONFIG.name}</title>
         <meta name="description" content="An unexpected error has occurred." />
-        <meta name="robots" content="noindex, nofollow" />
+
       </Helmet>
 
       <div className="container mx-auto px-4 relative z-10 text-center max-w-2xl">

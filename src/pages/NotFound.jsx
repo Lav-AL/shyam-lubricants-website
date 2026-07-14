@@ -16,7 +16,7 @@ export function NotFound() {
       <Helmet>
         <title>404 - Page Not Found | {SITE_CONFIG.name}</title>
         <meta name="description" content="The page you are looking for does not exist." />
-        <meta name="robots" content="noindex, nofollow" />
+
       </Helmet>
 
       {/* Red Glow */}
