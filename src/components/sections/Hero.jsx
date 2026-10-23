@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { Link } from "react-router-dom"
-import heroImg from "@/assets/bottle-front.jpeg"
+import heroImg from "@/assets/hero-bottles.jpg"
 
 export function Hero() {
   return (
@@ -62,25 +62,28 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative order-1 lg:order-2 flex justify-center h-[55vh] min-h-[400px] lg:h-[82vh]"
+          className="relative order-1 lg:order-2 flex justify-center items-center py-4 lg:py-0"
         >
-          {/* Enhanced Premium Shadow and Reflection Base */}
-          <div className="absolute bottom-2 lg:bottom-8 w-4/5 max-w-[320px] h-8 bg-black/70 blur-[16px] rounded-[100%]" />
-          <div className="absolute bottom-4 lg:bottom-12 w-3/5 max-w-[200px] h-4 bg-black/90 blur-[8px] rounded-[100%]" />
+          {/* Subtle Ambient Glow matching gold & green splashes */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/15 via-brand-red/10 to-emerald-500/15 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
           
-          <motion.img 
-            src={heroImg} 
-            alt="COSMOGOLD SYNTH-TEC 4T Bottle" 
-            fetchpriority="high"
-            loading="eager"
-            className="h-full w-auto object-contain z-10 drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)]"
-            animate={{ y: [-12, 12, -12] }}
+          <motion.div 
+            className="relative z-10 w-full max-w-[560px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/10"
+            animate={{ y: [-8, 8, -8] }}
             transition={{
               duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
             }}
-          />
+          >
+            <img 
+              src={heroImg} 
+              alt="COSMOGOLD SYNTH-TEC 4T Engine Oil" 
+              fetchpriority="high"
+              loading="eager"
+              className="w-full h-auto object-cover"
+            />
+          </motion.div>
         </motion.div>
       </div>
 
