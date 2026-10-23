@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { CheckCircle2, ShieldAlert, Zap, Globe } from "lucide-react"
-import productImg from "@/assets/bottle-back.jpeg"
+import productImg from "@/assets/product-20w40.jpg"
 
 export function ProductOverview() {
   return (
@@ -16,9 +16,16 @@ export function ProductOverview() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 flex justify-center lg:justify-end"
           >
-            <div className="relative group">
-              <div className="absolute inset-0 bg-silver/30 rounded-full blur-[80px] group-hover:bg-brand-red/15 transition-colors duration-700" />
-              <img src={productImg} alt="COSMOGOLD SYNTH-TEC 4T" loading="lazy" className="relative z-10 w-auto h-[400px] lg:h-[500px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] hover:scale-105 transition-transform duration-700" />
+            <div className="relative group w-full max-w-[420px]">
+              <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/20 to-brand-red/15 rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
+              <div className="relative z-10 rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-gray-200/80 bg-carbon">
+                <img 
+                  src={productImg} 
+                  alt="COSMOGOLD SYNTH-TEC 4T 20W-40" 
+                  loading="lazy" 
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+              </div>
             </div>
           </motion.div>
 
