@@ -4,11 +4,11 @@ import { Settings, Shield, Zap, RefreshCw, BarChart } from "lucide-react"
 export function TechnicalSpecs() {
   const specs = [
     { label: "Engine Type", value: "4-Stroke", icon: <Settings className="text-brand-red" size={24} /> },
-    { label: "Viscosity Grade", value: "20W-40", icon: <BarChart className="text-brand-red" size={24} /> },
+    { label: "Viscosity Grades", value: "20W-40 & 20W-50", icon: <BarChart className="text-brand-red" size={24} /> },
     { label: "API Standard", value: "SN", icon: <Shield className="text-brand-red" size={24} /> },
     { label: "JASO Standard", value: "MA2", icon: <Shield className="text-brand-red" size={24} /> },
-    { label: "Packaging Size", value: "900 ml", icon: <RefreshCw className="text-brand-red" size={24} /> },
-    { label: "BS-VI", value: "Compatible", icon: <Zap className="text-brand-red" size={24} /> }
+    { label: "Packaging Options", value: "900 ml & 1 Ltr", icon: <RefreshCw className="text-brand-red" size={24} /> },
+    { label: "Emission Standard", value: "BS-VI Compliant", icon: <Zap className="text-brand-red" size={24} /> }
   ]
 
   return (

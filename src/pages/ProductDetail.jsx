@@ -20,18 +20,18 @@ export function ProductDetail() {
   return (
     <>
       <Helmet>
-        <title>SYNTH-TEC 4T 20W40 | {SITE_CONFIG.title}</title>
-        <meta name="description" content="COSMOGOLD SYNTH-TEC 4T 20W40 is a premium export-quality 4-stroke engine oil offering maximum protection, fuel saving, and superior lubrication." />
+        <title>SYNTH-TEC 4T 20W-40 & 20W-50 | {SITE_CONFIG.title}</title>
+        <meta name="description" content="COSMOGOLD SYNTH-TEC 4T 20W-40 and 20W-50 premium export-quality 4-stroke engine oils offering maximum protection, fuel saving, and superior lubrication." />
         <link rel="canonical" href={`${SITE_CONFIG.url}/product`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="product" />
-        <meta property="og:title" content="COSMOGOLD SYNTH-TEC 4T 20W40" />
+        <meta property="og:title" content="COSMOGOLD SYNTH-TEC 4T 20W-40 & 20W-50" />
         <meta property="og:description" content="Premium 4-stroke engine oil designed for extreme performance. API SN, JASO MA2, BS-VI compatible." />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="COSMOGOLD SYNTH-TEC 4T 20W40" />
+        <meta property="twitter:title" content="COSMOGOLD SYNTH-TEC 4T 20W-40 & 20W-50" />
         <meta property="twitter:description" content="Premium 4-stroke engine oil designed for extreme performance." />
       </Helmet>
 

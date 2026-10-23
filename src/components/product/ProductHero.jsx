@@ -1,16 +1,49 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { MessageCircle, Phone, Download, CheckCircle2, ArrowLeft } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { SITE_CONFIG } from "@/config/constants"
-import bottleFront from "@/assets/bottle-front.jpeg"
+import product20w40 from "@/assets/product-20w40.jpg"
+import product20w50 from "@/assets/product-20w50.jpg"
 import bottleBack from "@/assets/bottle-back.jpeg"
 
-export function ProductHero() {
-  const [activeImage, setActiveImage] = useState(0)
-  const images = [bottleFront, bottleBack]
+const productVariants = [
+  {
+    id: "20w40",
+    viscosity: "20W-40",
+    volume: "900ml",
+    image: product20w40,
+    tagline: "Maximum Fuel Saving & Smooth Clutch",
+    description: "Engineered with advanced synthetic technology for modern high-performance motorcycles. Delivers exceptional thermal stability, superior wear protection, and optimized clutch performance under extreme riding conditions."
+  },
+  {
+    id: "20w50",
+    viscosity: "20W-50",
+    volume: "1 Ltr",
+    image: product20w50,
+    tagline: "Heavy-Duty Thermal & Shear Protection",
+    description: "Specially formulated for high-temperature operating conditions and heavy engine loads. Provides robust viscosity retention, maximum cylinder lubrication, and enhanced engine protection for long journeys."
+  }
+]
 
-  const message = encodeURIComponent("Hello! I want to inquire about COSMOGOLD SYNTH-TEC 4T 20W40.")
+export function ProductHero() {
+  const [searchParams] = useSearchParams()
+  const initialVariant = searchParams.get("variant") === "20w50" ? 1 : 0
+  const [selectedVariantIdx, setSelectedVariantIdx] = useState(initialVariant)
+  const [activeImage, setActiveImage] = useState(0)
+
+  useEffect(() => {
+    if (searchParams.get("variant") === "20w50") {
+      setSelectedVariantIdx(1)
+    } else if (searchParams.get("variant") === "20w40") {
+      setSelectedVariantIdx(0)
+    }
+  }, [searchParams])
+
+  const currentVariant = productVariants[selectedVariantIdx]
+  const images = [currentVariant.image, bottleBack]
+
+  const message = encodeURIComponent(`Hello! I want to inquire about COSMOGOLD SYNTH-TEC 4T ${currentVariant.viscosity} (${currentVariant.volume}).`)
   const whatsappUrl = `https://wa.me/${SITE_CONFIG.contact.phonePrimary.replace(/[^0-9]/g, '')}?text=${message}`
   const callUrl = `tel:${SITE_CONFIG.contact.phonePrimary.replace(/[^0-9+]/g, '')}`
 
@@ -108,6 +141,26 @@ export function ProductHero() {
               </Link>
             </div>
 
+            {/* Variant Switcher Pills */}
+            <div className="flex items-center gap-3 mb-6">
+              {productVariants.map((v, idx) => (
+                <button
+                  key={v.id}
+                  onClick={() => {
+                    setSelectedVariantIdx(idx)
+                    setActiveImage(0)
+                  }}
+                  className={`px-5 py-2 rounded-xl font-bold text-xs md:text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                    selectedVariantIdx === idx 
+                      ? "bg-brand-red text-white shadow-[0_4px_15px_rgba(216,27,33,0.4)]" 
+                      : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/10"
+                  }`}
+                >
+                  {v.viscosity} ({v.volume})
+                </button>
+              ))}
+            </div>
+
             <div className="inline-block px-4 py-1.5 mb-4 border border-silver/30 rounded-full bg-white/5 text-silver font-medium text-xs md:text-sm tracking-[0.2em] uppercase w-fit">
               Premium 4 Stroke Engine Oil
             </div>
@@ -120,7 +173,7 @@ export function ProductHero() {
             {/* Premium Specification Badges - Immediately Below Title */}
             <div className="flex flex-wrap items-center gap-2 mb-6">
               <span className="px-3 py-1.5 bg-brand-red text-white text-sm font-bold tracking-widest uppercase rounded shadow-sm">
-                20W40
+                {currentVariant.viscosity}
               </span>
               <span className="px-3 py-1.5 bg-white/10 text-white border border-white/20 text-xs md:text-sm font-bold tracking-widest uppercase rounded hover:bg-white/20 transition-colors cursor-default">
                 API SN
@@ -132,12 +185,12 @@ export function ProductHero() {
                 BS-VI
               </span>
               <span className="px-3 py-1.5 bg-silver/20 text-silver border border-silver/30 text-xs md:text-sm font-bold tracking-widest uppercase rounded">
-                900ml
+                {currentVariant.volume}
               </span>
             </div>
 
-            <p className="text-base md:text-lg text-white/80 mb-8 font-light leading-relaxed max-w-xl">
-              Engineered with advanced synthetic technology for modern high-performance motorcycles. Delivers exceptional thermal stability, superior wear protection, and optimized clutch performance under extreme riding conditions.
+            <p className="text-base md:text-lg text-white/80 mb-8 font-light leading-relaxed max-w-xl min-h-[70px]">
+              {currentVariant.description}
             </p>
 
             {/* Feature Highlights Grid */}

@@ -3,16 +3,16 @@ import { Camera } from "lucide-react"
 
 // Import assets
 import companyBanner from "@/assets/company-banner.jpeg"
-import bottleFront from "@/assets/bottle-front.jpeg"
-import bottleBack from "@/assets/bottle-back.jpeg"
-import businessCard from "@/assets/business-card.jpeg"
+import product20w40 from "@/assets/product-20w40.jpg"
+import product20w50 from "@/assets/product-20w50.jpg"
+import heroBottles from "@/assets/hero-bottles.jpg"
 
 export function CompanyGallery() {
   const images = [
+    { src: heroBottles, alt: "COSMOGOLD SYNTH-TEC 4T Range" },
     { src: companyBanner, alt: "SHYAM LUBRICANTS Facility Banner" },
-    { src: bottleFront, alt: "COSMOGOLD SYNTH-TEC 4T Front" },
-    { src: bottleBack, alt: "COSMOGOLD SYNTH-TEC 4T Back Label" },
-    { src: businessCard, alt: "SHYAM LUBRICANTS Business Card" }
+    { src: product20w40, alt: "COSMOGOLD SYNTH-TEC 4T 20W-40 (900ml)" },
+    { src: product20w50, alt: "COSMOGOLD SYNTH-TEC 4T 20W-50 (1 Ltr)" }
   ]
 
   return (
@@ -54,7 +54,7 @@ export function CompanyGallery() {
               <img 
                 src={img.src} 
                 alt={img.alt} 
-                className={`w-full h-full ${idx === 0 || idx === 3 ? 'object-cover' : 'object-contain'} drop-shadow-xl group-hover:scale-105 transition-transform duration-700 ease-out`}
+                className="w-full h-full object-cover drop-shadow-xl group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
             </motion.div>

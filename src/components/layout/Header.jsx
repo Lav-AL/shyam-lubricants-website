@@ -32,7 +32,7 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 font-body text-sm font-medium">
           <Link to="/" className="text-white hover:text-brand-red transition-colors">Home</Link>
-          <Link to="/products" className="text-white hover:text-brand-red transition-colors">Product</Link>
+          <Link to="/products" className="text-white hover:text-brand-red transition-colors">Products</Link>
           <Link to="/about" className="text-white hover:text-brand-red transition-colors">Company</Link>
           <Link to="/contact" className="text-white hover:text-brand-red transition-colors">Contact</Link>
           <Link 
@@ -62,7 +62,7 @@ export function Header() {
           className="md:hidden absolute top-20 left-0 w-full bg-carbon/98 backdrop-blur-xl border-b border-silver/10 flex flex-col items-center py-8 gap-6 shadow-2xl"
         >
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium hover:text-brand-red">Home</Link>
-          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium hover:text-brand-red">Product</Link>
+          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium hover:text-brand-red">Products</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium hover:text-brand-red">Company</Link>
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium hover:text-brand-red">Contact</Link>
           <Link 

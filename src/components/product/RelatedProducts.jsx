@@ -31,7 +31,7 @@ export function RelatedProducts() {
             viewport={{ once: true }}
           >
             <Link
-              to="/"
+              to="/products"
               className="flex items-center gap-2 text-silver hover:text-brand-red font-bold uppercase tracking-widest text-sm transition-colors group"
             >
               <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />

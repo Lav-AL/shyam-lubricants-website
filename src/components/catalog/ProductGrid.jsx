@@ -1,33 +1,58 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react"
-import bottleFront from "@/assets/bottle-front.jpeg" // Actual front bottle
+import product20w40 from "@/assets/product-20w40.jpg"
+import product20w50 from "@/assets/product-20w50.jpg"
 
 export function ProductGrid({ searchTerm }) {
   // Database of live products
   const liveProducts = [
     {
-      id: "synth-tec-4t",
+      id: "synth-tec-4t-20w40",
       name: "SYNTH-TEC 4T",
       type: "Premium 4 Stroke Engine Oil",
-      image: bottleFront,
-      link: "/product",
-      viscosity: "20W40",
+      image: product20w40,
+      link: "/product?variant=20w40",
+      viscosity: "20W-40",
       volume: "900ml",
       badges: ["API SN", "JASO MA2", "BS-VI"],
       features: [
         { text: "Maximum Protection", icon: <ShieldCheck size={16} /> },
         { text: "Maximum Fuel Saving", icon: <Zap size={16} /> }
       ]
+    },
+    {
+      id: "synth-tec-4t-20w50",
+      name: "SYNTH-TEC 4T",
+      type: "Premium 4 Stroke Engine Oil",
+      image: product20w50,
+      link: "/product?variant=20w50",
+      viscosity: "20W-50",
+      volume: "1 Ltr",
+      badges: ["API SN", "JASO MA2", "BS-VI"],
+      features: [
+        { text: "Maximum Performance", icon: <ShieldCheck size={16} /> },
+        { text: "Heavy Load Protection", icon: <Zap size={16} /> }
+      ]
     }
   ]
 
-  // Filter logic
-  const filteredProducts = liveProducts.filter(p => 
-    p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    p.viscosity.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.type.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  // Filter logic - matches with or without hyphens, spaces, and badges
+  const cleanSearch = searchTerm.toLowerCase().replace(/[-\s]/g, '')
+  const filteredProducts = liveProducts.filter(p => {
+    if (!cleanSearch) return true
+    const cleanName = p.name.toLowerCase().replace(/[-\s]/g, '')
+    const cleanViscosity = p.viscosity.toLowerCase().replace(/[-\s]/g, '')
+    const cleanType = p.type.toLowerCase().replace(/[-\s]/g, '')
+    const cleanVolume = p.volume.toLowerCase().replace(/[-\s]/g, '')
+    const badgesMatch = p.badges.some(b => b.toLowerCase().replace(/[-\s]/g, '').includes(cleanSearch))
+    
+    return cleanName.includes(cleanSearch) || 
+           cleanViscosity.includes(cleanSearch) || 
+           cleanType.includes(cleanSearch) ||
+           cleanVolume.includes(cleanSearch) ||
+           badgesMatch
+  })
 
   // Coming Soon placeholders
   const comingSoonProducts = [
@@ -67,7 +92,7 @@ export function ProductGrid({ searchTerm }) {
                 <motion.img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-auto h-[250px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform duration-500 ease-out relative z-10"
+                  className="w-auto h-[250px] max-w-full rounded-2xl object-cover drop-shadow-[0_15px_25px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform duration-500 ease-out relative z-10"
                 />
               </div>
 

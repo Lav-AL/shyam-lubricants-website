@@ -1,26 +1,27 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
-import bottleFront from "@/assets/bottle-front.jpeg"
+import heroBottles from "@/assets/hero-bottles.jpg"
 
 export function ProductTeaser() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-16 border border-silver/40 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col md:flex-row items-center gap-12">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-14 border border-silver/40 shadow-[0_10px_40px_rgba(0,0,0,0.03)] flex flex-col md:flex-row items-center gap-12">
           
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="md:w-1/2 flex justify-center relative"
+            className="md:w-1/2 flex justify-center relative w-full"
           >
-            <div className="absolute inset-0 bg-brand-red/5 rounded-full blur-[60px]" />
-            <img 
-              src={bottleFront} 
-              alt="COSMOGOLD SYNTH-TEC 4T" 
-              className="w-full max-w-[280px] object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)] relative z-10"
-            />
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_15px_35px_rgba(0,0,0,0.15)] border border-gray-200 bg-carbon max-w-[360px] w-full">
+              <img 
+                src={heroBottles} 
+                alt="COSMOGOLD SYNTH-TEC 4T Range" 
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </motion.div>
 
           <motion.div 
